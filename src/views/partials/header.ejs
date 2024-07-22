@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="website icon" type="png" href="images/brandmark@2x-8.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bijou Boutique</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <a href="/"
+          ><img src="/images/bijou-boutique.png" alt="Logo de la tienda"
+        /></a>
+      </div>
+      <div class="icons-container">
+        <% if (user) { %>
+        <div class="tooltip">
+          <a href="/logout" class="textos"
+            ><i class="fa-solid fa-right-from-bracket"></i
+          ></a>
+          <span class="tooltiptext">Log Out</span>
+        </div>
+        <div class="tooltip">
+          <a href="/profile">
+            <% if (user.image) { %>
+            <img
+              src="/images/users/<%= user.image %>"
+              alt="Foto de perfil"
+              class="profile-picture"
+            />
+            <% } else { %>
+            <i class="fa-solid fa-user"></i>
+            <% } %>
+          </a>
+          <span class="tooltiptext">Perfil</span>
+        </div>
+        <% } else { %>
+        <div class="tooltip">
+          <a href="/login" class="textos"
+            ><i class="fa-solid fa-right-to-bracket"></i
+          ></a>
+          <span class="tooltiptext">Log In</span>
+        </div>
+        <% } %>
+        <div class="tooltip">
+          <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+          <span class="tooltiptext">Carrito </span>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
